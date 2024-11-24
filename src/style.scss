@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.selection {
+  position: absolute;
+  border: 2px dotted rgb(23, 155, 199);
+  background-color: rgba(216, 191, 216, 0.203);
+  user-select: none;
+}
+
+.selection.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.output.pending::after {
+  content: "Please fill up the input above";
+  background: #00000038;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  --bg-color: #03a9f4;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: white;
+  border-radius: 8px;
+  cursor: move;
+  user-select: none;
+
+  &:hover {
+    --bg-color: #2196f3;
+  }
+
+  &.selected {
+    --bg-color: #3f51b5;
+    z-index: 2;
+  }
+
+  &.moving {
+    --bg-color: #903fb5;
+    z-index: 2;
+  }
+}
