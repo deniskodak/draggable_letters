@@ -1,3 +1,3 @@
-{
-  base: "/draggable_letters/";
-}
+export default {
+  base: "/draggable_letters/",
+};
